@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
 const historySchema = mongoose.Schema({
-    firstname: { type: String, required: true },
-    lastname: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true },
-    team: { type: String },
-    status: { type: String }
+    idContainer: { type: String, required: true },
+    idUser: { type: String, required: true },
+    idPartner: { type: String, required: true},
+    typeOfAction: { type: String, required: true },
+    date:  {type: Date, default: Date.now, required: true}
+
 });
 
 historySchema.plugin(uniqueValidator);
